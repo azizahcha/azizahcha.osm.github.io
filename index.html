@@ -9,6 +9,15 @@
     <body>
         <div id="mapdiv"></div>
         <script>
+		var mymap = L.map("mapdiv").setView([-8.100, 112.150], 14);
+
+            var osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+            {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                subdomains: ['a', 'b', 'c']
+            }
+            )
+            osm.addTo(mymap);
             var cities = L.layerGroup();
 
 var mLittleton = L.marker([-8.0656311,112.0760927]).bindPopup('Griya jahit HARVIE').addTo(cities);
